@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="am" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ቃለአብ ዘዳንግላ - Full-Stack & Mobile Developer Portfolio">
+    <title>ቃለአብ ዘዳንግላ | Full-Stack & Mobile Developer</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Ethiopic:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <div class="aurora">
+        <div class="aurora-blob aurora-1"></div>
+        <div class="aurora-blob aurora-2"></div>
+        <div class="aurora-blob aurora-3"></div>
+    </div>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" data-tab="home">
+                <span class="logo-bracket">&lt;/&gt;</span>
+                <span class="logo-text">ቃለአብ<span class="logo-dot">.dev</span></span>
+            </a>
+            
+            <nav class="nav-links">
+                <a href="#home" class="nav-link active" data-tab="home" data-en="Home" data-am="መግቢያ">መግቢያ</a>
+                <a href="#about" class="nav-link" data-tab="about" data-en="About" data-am="ስለ እኔ">ስለ እኔ</a>
+                <a href="#projects" class="nav-link" data-tab="projects" data-en="Projects" data-am="ፕሮጀክቶች">ፕሮጀክቶች</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <!-- 🌐 የቋንቋ መቀየሪያ ቁልፍ -->
+                <button id="lang-toggle" class="icon-btn" aria-label="Toggle language" title="Change Language">
+                    <i class="fa-solid fa-language"></i>
+                </button>
+                <!-- 🌓 የጨለማ/ብርሃን ቁልፍ -->
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+                    <i class="fa-solid fa-sun" id="theme-icon"></i>
+                </button>
+                
+                <a href="#contact" class="btn-glow" data-tab="contact" data-en="Contact" data-am="አግኙኝ">አግኙኝ</a>
+                <button id="menu-btn" class="icon-btn mobile-only">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="#home" class="mobile-link active" data-tab="home" data-en="Home" data-am="መግቢያ"><i class="fa-solid fa-house"></i> መግቢያ</a>
+            <a href="#about" class="mobile-link" data-tab="about" data-en="About" data-am="ስለ እኔ"><i class="fa-solid fa-user"></i> ስለ እኔ</a>
+            <a href="#projects" class="mobile-link" data-tab="projects" data-en="Projects" data-am="ፕሮጀክቶች"><i class="fa-solid fa-rocket"></i> ፕሮጀክቶች</a>
+            <a href="#contact" class="mobile-link mobile-cta" data-tab="contact" data-en="Contact" data-am="አግኙኝ"><i class="fa-solid fa-paper-plane"></i> አግኙኝ</a>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="main-content">
+        
+        <!-- TAB 1: HOME -->
+        <section id="home" class="tab-content active">
+            <div class="hero">
+                <div class="hero-grid">
+                    
+                    <!-- ፕሮፋይል ካርድ -->
+                    <div class="hero-card-wrapper reveal">
+                        <div class="hero-card tilt-card">
+                            <div class="card-glow"></div>
+                            
+                            <div class="profile-photo">
+                                <div class="photo-ring"></div>
+                                <div class="photo-orbiting-dots">
+                                    <span class="orbit-dot"></span>
+                                    <span class="orbit-dot"></span>
+                                    <span class="orbit-dot"></span>
+                                </div>
+                                <div class="photo-inner">
+                                    <svg class="photo-placeholder" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                    </svg>
+                                    <img src="images/profile.jpg" 
+                                         onerror="this.style.display='none'" 
+                                         alt="ቃለአብ ዘዳንግላ ፎቶ"
+                                         class="profile-img">
+                                </div>
+                                <div class="online-badge"></div>
+                            </div>
+                            
+                            <h3 class="card-name">ቃለአብ ዘዳንግላ</h3>
+                            <p class="card-role">Full-Stack & Mobile Developer</p>
+                            <p class="card-location"><i class="fa-solid fa-location-dot"></i> ኢትዮጵያ-አማራ-ጎጃም-ዳንግላ</p>
+                            
+                            <div class="card-socials">
+                                <a href="https://github.com" target="_blank" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                                <a href="https://linkedin.com" target="_blank" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a href="https://t.me/KaleabYemikaelu" target="_blank" class="social-btn"><i class="fa-brands fa-telegram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ጽሑፍ -->
+                    <div class="hero-text">
+                        <div class="status-badge reveal">
+                            <span class="pulse-dot"></span>
+                            <span data-en="Ready for new projects" data-am="ለአዲስ ፕሮጀክቶች ዝግጁ ነኝ">ለአዲስ ፕሮጀክቶች ዝግጁ ነኝ</span>
+                        </div>
+                        
+                        <h1 class="hero-title reveal">
+                            <span class="greeting" data-en="Hello I am" data-am="ሰላም እኔ">ሰላም እኔ</span>
+                            <span class="name-shine">ቃለአብ</span>
+                            <span class="greeting" data-en="" data-am="ነኝ">ነኝ</span>
+                        </h1>
+                        
+                        <div class="role-rotator reveal">
+                            <span class="role-prefix" data-en="I am a" data-am="እኔ">እኔ</span>
+                            <span id="role-text" class="role-text"></span>
+                            <span class="role-cursor">|</span>
+                        </div>
+                        
+                        <p class="hero-desc reveal" data-en="I am building modern, fast, and high-quality websites and mobile applications. We turn your ideas into real digital products." data-am="ዘመናዊ፣ ፈጣን እና ጥራት ያላቸው ድረ-ገጾችን እና የሞባይል አፕሊኬሽኖችን በመገንባት ላይ እገኛለሁ። ሀሳቦችዎን ወደ እውነተኛ ዲጂታል ምርቶች እንለውጣለን።">
+                            ዘመናዊ፣ ፈጣን እና ጥራት ያላቸው ድረ-ገጾችን እና የሞባይል አፕሊኬሽኖችን በመገንባት ላይ እገኛለሁ። 
+                            ሀሳቦችዎን ወደ <span class="highlight" data-en="real digital products" data-am="እውነተኛ ዲጂታል ምርቶች">እውነተኛ ዲጂታል ምርቶች</span> እንለውጣለን።
+                        </p>
+                        
+                        <div class="hero-buttons reveal">
+                            <a href="#projects" class="btn-primary" data-tab="projects" data-en="View My Projects" data-am="ፕሮጀክቶቼን ይመልከቱ">
+                                <span>ፕሮጀክቶቼን ይመልከቱ</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn-secondary" data-tab="contact" data-en="Contact Me" data-am="ያነጋግሩኝ">
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>ያነጋግሩኝ</span>
+                            </a>
+                        </div>
+                        
+                        <div class="hero-stats reveal">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="4">0</div>
+                                <div class="stat-label" data-en="Projects" data-am="ፕሮጀክቶች">ፕሮጀክቶች</div>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="2">0</div>
+                                <div class="stat-label" data-en="Years Experience" data-am="ዓመታት ልምድ">ዓመታት ልምድ</div>
+                            </div>
+                            <div class="stat-divider"></div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="10">0</div>
+                                <div class="stat-label" data-en="Skills" data-am="ክህሎቶች">ክህሎቶች</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: ABOUT -->
+        <section id="about" class="tab-content">
+            <div class="section">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <span class="section-tag" data-en="About Me" data-am="ስለ እኔ">ስለ እኔ</span>
+                        <h2 class="section-title" data-en="About Me & Skills" data-am="ስለ እኔ እና ክህሎቶቼ">ስለ እኔ እና ክህሎቶቼ</h2>
+                        <p class="section-subtitle" data-en="My knowledge in modern technologies" data-am="በዘመናዊ ቴክኖሎጂዎች ላይ ያለኝ እውቀት">በዘመናዊ ቴክኖሎጂዎች ላይ ያለኝ እውቀት</p>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <div class="skill-card reveal">
+                            <div class="skill-icon-wrap frontend"><i class="fa-solid fa-code"></i></div>
+                            <h3>Frontend</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>React</span><span class="skill-pct">90%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>JavaScript</span><span class="skill-pct">85%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>HTML/CSS</span><span class="skill-pct">95%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card reveal">
+                            <div class="skill-icon-wrap backend"><i class="fa-solid fa-server"></i></div>
+                            <h3>Backend</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>Node.js</span><span class="skill-pct">85%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>Express</span><span class="skill-pct">80%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>PHP</span><span class="skill-pct">90%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card reveal">
+                            <div class="skill-icon-wrap mobile"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <h3>Mobile</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>Flutter</span><span class="skill-pct">85%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>Dart</span><span class="skill-pct">80%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-card reveal">
+                            <div class="skill-icon-wrap database"><i class="fa-solid fa-database"></i></div>
+                            <h3>Databases</h3>
+                            <div class="skill-list">
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>MySQL</span><span class="skill-pct">90%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+                                </div>
+                                <div class="skill-item">
+                                    <div class="skill-info"><span>Firebase</span><span class="skill-pct">80%</span></div>
+                                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: PROJECTS -->
+        <section id="projects" class="tab-content">
+            <div class="section section-alt">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <span class="section-tag" data-en="My Projects" data-am="ፕሮጀክቶቼ">ፕሮጀክቶቼ</span>
+                        <h2 class="section-title" data-en="Projects I Built" data-am="የሰራኋቸው ፕሮጀክቶች">የሰራኋቸው ፕሮጀክቶች</h2>
+                        <p class="section-subtitle" data-en="Main software products built so far" data-am="እስካሁን የገነባኋቸው ዋና ዋና የሶፍትዌር ውጤቶች">እስካሁን የገነባኋቸው ዋና ዋና የሶፍትዌር ውጤቶች</p>
+                    </div>
+                    
+                    <div class="projects-grid">
+                        <article class="project-card reveal">
+                            <div class="project-header">
+                                <div class="project-icon indigo"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <div class="project-meta">
+                                    <h3>Ethio Market</h3>
+                                    <span class="project-category">E-Commerce</span>
+                                </div>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <p class="project-desc" data-en="A fully functional E-Commerce platform. Includes order management and inventory tracking." data-am="ሙሉ በሙሉ አገልግሎት የሚሰጥ የኢ-ኮሜርስ ፕላትፎርም። የትዕዛዝ አስተዳደር እና የዕቃ ዝርዝር መቆጣጠሪያ የተካተተበት።">
+                                ሙሉ በሙሉ አገልግሎት የሚሰጥ የኢ-ኮሜርስ ፕላትፎርም። የትዕዛዝ አስተዳደር እና የዕቃ ዝርዝር መቆጣጠሪያ የተካተተበት።
+                            </p>
+                            <div class="project-tags">
+                                <span>Node.js</span><span>Express</span><span>MongoDB</span><span>React</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com" target="_blank" class="project-link" data-en="View Code" data-am="ኮዱን ይመልከቱ">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>ኮዱን ይመልከቱ</span>
+                                    <i class="fa-solid fa-arrow-right arrow"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="project-card reveal">
+                            <div class="project-header">
+                                <div class="project-icon cyan"><i class="fa-solid fa-note-sticky"></i></div>
+                                <div class="project-meta">
+                                    <h3>Smart Notes</h3>
+                                    <span class="project-category">Mobile App</span>
+                                </div>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <p class="project-desc" data-en="A mobile note-taking application. Features user registration, authentication screens, and a beautiful design." data-am="ለሞባይል የተሰራ ማስታወሻ መያዣ አፕሊኬሽን። የተጠቃሚ ምዝገባ፣ ማረጋገጫ ስክሪኖች እና ማራኪ ዲዛይን የያዘ።">
+                                ለሞባይል የተሰራ ማስታወሻ መያዣ አፕሊኬሽን። የተጠቃሚ ምዝገባ፣ ማረጋገጫ ስክሪኖች እና ማራኪ ዲዛይን የያዘ።
+                            </p>
+                            <div class="project-tags">
+                                <span>Flutter</span><span>Dart</span><span>Firebase</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com" target="_blank" class="project-link" data-en="View Code" data-am="ኮዱን ይመልከቱ">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>ኮዱን ይመልከቱ</span>
+                                    <i class="fa-solid fa-arrow-right arrow"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="project-card reveal">
+                            <div class="project-header">
+                                <div class="project-icon purple"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="project-meta">
+                                    <h3>Student Management</h3>
+                                    <span class="project-category">Web System</span>
+                                </div>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <p class="project-desc" data-en="School management system. With role-based access for admins, teachers, and students." data-am="የትምህርት ቤት አስተዳደር ሲስተም። ለአስተዳዳሪዎች፣ አስተማሪዎች እና ተማሪዎች የተለየ የውጤት ቁጥጥር ያለው።">
+                                የትምህርት ቤት አስተዳደር ሲስተም። ለአስተዳዳሪዎች፣ አስተማሪዎች እና ተማሪዎች የተለየ የውጤት ቁጥጥር ያለው።
+                            </p>
+                            <div class="project-tags">
+                                <span>PHP</span><span>MySQL</span><span>Bootstrap</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com" target="_blank" class="project-link" data-en="View Code" data-am="ኮዱን ይመልከቱ">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>ኮዱን ይመልከቱ</span>
+                                    <i class="fa-solid fa-arrow-right arrow"></i>
+                                </a>
+                            </div>
+                        </article>
+                        
+                        <article class="project-card reveal">
+                            <div class="project-header">
+                                <div class="project-icon emerald"><i class="fa-solid fa-shirt"></i></div>
+                                <div class="project-meta">
+                                    <h3>Fashion Store</h3>
+                                    <span class="project-category">E-Commerce</span>
+                                </div>
+                                <span class="project-year">2023</span>
+                            </div>
+                            <p class="project-desc" data-en="Fashion clothing showcase and e-commerce website. Built with PHP and MySQL." data-am="የፋሽን ልብሶች ማሳያ እና የሽያጭ ድረ-ገጽ ፕሮጀክት። በ PHP እና MySQL በመጠቀም የተገነባ ማራኪ መድረክ።">
+                                የፋሽን ልብሶች ማሳያ እና የሽያጭ ድረ-ገጽ ፕሮጀክት። በ PHP እና MySQL በመጠቀም የተገነባ ማራኪ መድረክ።
+                            </p>
+                            <div class="project-tags">
+                                <span>PHP</span><span>MySQL</span><span>JavaScript</span>
+                            </div>
+                            <div class="project-footer">
+                                <a href="https://github.com" target="_blank" class="project-link" data-en="View Code" data-am="ኮዱን ይመልከቱ">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>ኮዱን ይመልከቱ</span>
+                                    <i class="fa-solid fa-arrow-right arrow"></i>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: CONTACT -->
+        <section id="contact" class="tab-content">
+            <div class="section section-alt">
+                <div class="container container-narrow">
+                    <div class="section-header reveal">
+                        <span class="section-tag" data-en="Contact" data-am="ያግኙኝ">ያግኙኝ</span>
+                        <h2 class="section-title" data-en="Let's Talk!" data-am="እንነጋገር!">እንነጋገር!</h2>
+                        <p class="section-subtitle" data-en="For collaboration or to exchange ideas" data-am="ለስራ ትብብር ወይም ሃሳብ ለመለዋወጥ">ለስራ ትብብር ወይም ሃሳብ ለመለዋወጥ</p>
+                    </div>
+                    
+                    <div class="contact-grid reveal">
+                        <a href="mailto:kaleabkassa1225@gmail.com" class="contact-card">
+                            <div class="contact-icon indigo"><i class="fa-solid fa-envelope"></i></div>
+                            <div class="contact-info">
+                                <span class="contact-label" data-en="Email" data-am="ኢሜይል">ኢሜይል</span>
+                                <span class="contact-value">kaleabkassa1225@gmail.com</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right contact-arrow"></i>
+                        </a>
+                        
+                        <a href="https://t.me/KaleabYemikaelu" target="_blank" class="contact-card">
+                            <div class="contact-icon cyan"><i class="fa-brands fa-telegram"></i></div>
+                            <div class="contact-info">
+                                <span class="contact-label" data-en="Telegram" data-am="ቴሌግራም">ቴሌግራም</span>
+                                <span class="contact-value">@KaleabYemikaelu</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right contact-arrow"></i>
+                        </a>
+                        
+                        <a href="https://github.com" target="_blank" class="contact-card">
+                            <div class="contact-icon purple"><i class="fa-brands fa-github"></i></div>
+                            <div class="contact-info">
+                                <span class="contact-label" data-en="GitHub" data-am="GitHub">GitHub</span>
+                                <span class="contact-value">@username</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right contact-arrow"></i>
+                        </a>
+                        
+                        <a href="https://linkedin.com" target="_blank" class="contact-card">
+                            <div class="contact-icon blue"><i class="fa-brands fa-linkedin-in"></i></div>
+                            <div class="contact-info">
+                                <span class="contact-label" data-en="LinkedIn" data-am="LinkedIn">LinkedIn</span>
+                                <span class="contact-value">@username</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-right contact-arrow"></i>
+                        </a>
+                    </div>
+                    
+                    <form class="contact-form reveal" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label data-en="Your Name" data-am="ስምዎ">ስምዎ</label>
+                                <input type="text" required placeholder="John Doe" data-en-ph="Enter your full name" data-am-ph="ሙሉ ስምዎን ያስገቡ">
+                            </div>
+                            <div class="form-group">
+                                <label data-en="Email" data-am="ኢሜይል">ኢሜይል</label>
+                                <input type="email" required placeholder="email@example.com" data-en-ph="email@example.com" data-am-ph="email@example.com">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label data-en="Your Message" data-am="መልእክትዎ">መልእክትዎ</label>
+                            <textarea rows="5" required placeholder="Type your message here..." data-en-ph="Type your message here..." data-am-ph="መልእክትዎን እዚህ ይጻፉ..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full" data-en="Send Message" data-am="መልእክት ላክ">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>መልእክት ላክ</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-copy">
+                    &copy; 2026 <span class="footer-name">ቃለአብ ዘዳንግላ</span>. <span data-en="All rights reserved." data-am="መብቱ በህግ የተጠበቀ ነው።">መብቱ በህግ የተጠበቀ ነው።</span>
+                </p>
+                <div class="footer-socials">
+                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="https://t.me/KaleabYemikaelu" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                </div>
+                <p class="footer-note" data-en="Made with ❤️ and ☕" data-am="በ❤️ እና ☕ የተሰራ">በ❤️ እና ☕ የተሰራ</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
